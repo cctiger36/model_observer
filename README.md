@@ -2,7 +2,7 @@
 
 A rails plugin to count the model object creations between each request, and help to find out the duplication.
 
-[![Build Status](https://travis-ci.org/cctiger36/model_observer.png?branch=master)](https://travis-ci.org/cctiger36/model_observer) [![Gem Version](https://badge.fury.io/rb/model_observer.png)](http://badge.fury.io/rb/model_observer) [![Code Climate](https://codeclimate.com/github/cctiger36/model_observer.png)](https://codeclimate.com/github/cctiger36/model_observer)
+[![Build Status](https://travis-ci.org/cctiger36/model_observer.png?branch=master)](https://travis-ci.org/cctiger36/model_observer) [![Gem Version](https://badge.fury.io/rb/model_observer.png)](http://badge.fury.io/rb/model_observer) [![Code Climate](https://codeclimate.com/github/cctiger36/model_observer.png)](https://codeclimate.com/github/cctiger36/model_observer) [![Coverage Status](https://coveralls.io/repos/cctiger36/model_observer/badge.png)](https://coveralls.io/r/cctiger36/model_observer)
 
 ## Installation
 

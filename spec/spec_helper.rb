@@ -3,6 +3,9 @@ require 'rspec'
 require 'rails'
 require 'model_observer'
 
+require 'coveralls'
+Coveralls.wear!
+
 extend ModelObserver::Dependency
 
 MODELS = File.join(File.dirname(__FILE__), "models")
