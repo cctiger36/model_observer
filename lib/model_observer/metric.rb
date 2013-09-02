@@ -1,6 +1,6 @@
 module ModelObserver
   class Metric
-    attr_accessor :model_class, :model_primary_key, :model_id, :started_at, :ended_at
+    attr_accessor :model_class, :model_id, :started_at, :ended_at
 
     def initialize(model, started_at, ended_at)
       @model_class = model.class
