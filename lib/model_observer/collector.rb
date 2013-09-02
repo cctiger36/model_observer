@@ -13,9 +13,9 @@ module ModelObserver
         @@metrics = nil
       end
 
-      def matrics_hash
+      def metrics_hash
         hash = {}
-        matrics.each do |m|
+        metrics.each do |m|
           hash[m.model_class.name] ||= []
           hash[m.model_class.name] << m
         end

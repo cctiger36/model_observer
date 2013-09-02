@@ -1,6 +1,6 @@
 module ModelObserver
   class Metric
-    attr_accessor :model_class, :model_id, :started_at, :ended_at
+    attr_accessor :model_class, :model_primary_key, :model_id, :started_at, :ended_at
 
     def initialize(model, started_at, ended_at)
       @model_class = model.class
@@ -10,7 +10,7 @@ module ModelObserver
     end
 
     def duration
-      ((started_at.to_f - ended_at.to_f) * 1000).to_i
+      ((ended_at.to_f - started_at.to_f) * 1000).to_i
     end
   end
 end

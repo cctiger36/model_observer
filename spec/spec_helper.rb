@@ -8,6 +8,7 @@ extend ModelObserver::Dependency
 MODELS = File.join(File.dirname(__FILE__), "models")
 $LOAD_PATH.unshift(MODELS)
 SUPPORT = File.join(File.dirname(__FILE__), "support")
+Dir[ File.join(SUPPORT, "*.rb") ].reject { |filename| filename =~ /_database.rb$/ }.sort.each { |f| require f }
 
 if active_record?
   Dir[ File.join(MODELS, "*.rb") ].sort.each do |filename|
@@ -15,8 +16,6 @@ if active_record?
     autoload name.camelize.to_sym, name
   end
   require File.join(SUPPORT, "sqlite_database.rb")
-
-  ModelObserver::ActiveRecord.enable
 
   RSpec.configure do |config|
     config.before(:all) do
