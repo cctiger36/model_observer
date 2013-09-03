@@ -5,3 +5,4 @@ spec/dummy/
 *.swp
 *.swo
 *.gem
+coverage/
