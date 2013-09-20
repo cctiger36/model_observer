@@ -6,7 +6,7 @@ module ModelObserver
       end
 
       def add_metric(metric)
-        metrics << metric
+        metrics << metric if metric.model_id.present?
       end
 
       def clear
