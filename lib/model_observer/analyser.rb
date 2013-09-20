@@ -23,7 +23,7 @@ module ModelObserver
         end
         hash
         text = ""
-        hash.sort_by{|key, value| key}.each do |key, value|
+        hash.sort_by{|key, value| key || 0}.each do |key, value|
           text << "  #{primary_key}(#{key}): #{value}\n" if value > 1
         end
         text
