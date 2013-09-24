@@ -3,5 +3,10 @@ rvm:
   - "1.9.3"
   - "2.0.0"
 
+gemfile:
+  - Gemfile
+  - Gemfile.active_record3
+  - Gemfile.active_record4
+
 notifications:
   email: false

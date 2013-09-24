@@ -8,5 +8,13 @@ module ModelObserver
         false
       end
     end
+
+    def active_record3?
+      active_record? && ::ActiveRecord::VERSION::MAJOR == 3
+    end
+
+    def active_record4?
+      active_record? && ::ActiveRecord::VERSION::MAJOR == 4
+    end
   end
 end

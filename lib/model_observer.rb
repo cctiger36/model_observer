@@ -10,8 +10,15 @@ module ModelObserver
   autoload :Rack, 'model_observer/rack'
 
   if active_record?
-    autoload :ActiveRecord, 'model_observer/active_record'
-    ModelObserver::ActiveRecord.enable
+    if active_record4?
+      autoload :ActiveRecord, 'model_observer/active_record4'
+      ModelObserver::ActiveRecord.enable
+    elsif active_record3?
+      autoload :ActiveRecord, 'model_observer/active_record3'
+      ModelObserver::ActiveRecord.enable
+    else
+      raise "Current version of active_record is not supported."
+    end
   end
 
   class << self
