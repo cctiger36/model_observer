@@ -6,4 +6,4 @@ spec/dummy/
 *.swo
 *.gem
 coverage/
-Gemfile.lock
+Gemfile*.lock
