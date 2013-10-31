@@ -21,13 +21,15 @@ and bundle
 The ModelObserver log will look like:
 
     ===== Model Observer Start =====
-    Author: 1 sum(10ms) avg(10ms)
-    Book: 36 sum(13ms) avg(0ms)
-      id(20): 2
-      id(50): 9
-      id(61): 4
-      id(68): 2
-      id(111): 2
-      id(123): 3
-      id(124): 3
+    Author: 1 sum(10.6ms) avg(10.6ms)
+    Book: 27 sum(25.7ms) avg(1.0ms)
+      id(319): 3
+      id(377): 3
+      id(487): 3
+      id(489): 3
+      id(493): 3
+      id(496): 3
+      id(499): 3
+      id(507): 3
+      id(536): 3
     ===== Model Observer End =====
