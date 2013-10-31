@@ -10,7 +10,7 @@ module ModelObserver
     end
 
     def duration
-      ((ended_at.to_f - started_at.to_f) * 1000).to_i
+      ((ended_at.to_f - started_at.to_f) * 1000).round(1)
     end
   end
 end

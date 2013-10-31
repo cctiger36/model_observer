@@ -6,7 +6,7 @@ module ModelObserver
       after { Collector.clear }
       it "should return the model creation infos" do
         Author.find(1)
-        ModelObserver::Analyser.result.should =~ /^Author: 1 sum\(\d+ms\) avg\(\d+ms\)$/
+        ModelObserver::Analyser.result.should =~ /^Author: 1 sum\(\d+\.\d+ms\) avg\(\d+\.\d+ms\)$/
       end
 
       it "should record duplicated model creations" do
