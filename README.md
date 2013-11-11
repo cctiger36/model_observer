@@ -42,3 +42,5 @@ The summary of each request will be added to the end like this:
       id(507): 3
       id(536): 3
     ===== Model Observer End =======
+
+`id(319): 3` means the models with same class(Book) and same id(319) have been instantiated three times.
