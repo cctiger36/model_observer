@@ -19,6 +19,7 @@ module ModelObserver
     else
       raise "Current version of active_record is not supported."
     end
+    require 'model_observer/log_subscriber'
   end
 
   class << self
@@ -32,7 +33,7 @@ module ModelObserver
     def write_to_rails_log
       Rails.logger.warn "===== Model Observer Start ====="
       Rails.logger.warn Analyser.result
-      Rails.logger.warn "===== Model Observer End ====="
+      Rails.logger.warn "===== Model Observer End ======="
     end
   end
 end
