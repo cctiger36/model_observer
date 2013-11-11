@@ -18,7 +18,7 @@ and bundle
 
 ## Query Log
 
-The time include instantiate models will be logged after each sql log like this:
+The duration include instantiate models will be logged after each sql log like this:
 
     Author Load (0.5ms)  SELECT `authors`.* FROM `authors` WHERE `authors`.`id` = 1 LIMIT 1
     Author Instantiate (1.5ms)  SELECT `authors`.* FROM `authors` WHERE `authors`.`id` = 1 LIMIT 1
