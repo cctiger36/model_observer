@@ -16,9 +16,18 @@ and bundle
 
     bundle
 
-## Log
+## Query Log
 
-The ModelObserver log will look like:
+The time include instantiate models will be logged after each sql log like this:
+
+    Author Load (0.5ms)  SELECT `authors`.* FROM `authors` WHERE `authors`.`id` = 1 LIMIT 1
+    Author Instantiate (1.5ms)  SELECT `authors`.* FROM `authors` WHERE `authors`.`id` = 1 LIMIT 1
+
+1.5ms == 0.5ms(DB query) + 1.0ms(model instantiation)
+
+## Summary Log
+
+The summary of each request will be added to the end like this:
 
     ===== Model Observer Start =====
     Author: 1 sum(10.6ms) avg(10.6ms)
@@ -32,4 +41,4 @@ The ModelObserver log will look like:
       id(499): 3
       id(507): 3
       id(536): 3
-    ===== Model Observer End =====
+    ===== Model Observer End =======
