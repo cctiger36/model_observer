@@ -6,11 +6,19 @@ module ModelObserver
         Collector.metrics_hash.each do |key, value|
           sum_duration = value.map(&:duration).sum
           average_duration = sum_duration / value.count
-          text << "#{key}: #{value.count} sum(#{sum_duration.round(1)}ms) avg(#{average_duration.round(1)}ms)\n"
+          text << "#{key}: #{value.count} #{sum_text(sum_duration)} #{average_text(average_duration)}\n"
           text << analyse_single_class(value)
         end
         text.sub!(/\n$/, '')
         text
+      end
+
+      def sum_text(sum_duration)
+        "sum(#{sum_duration.round(1)}ms)"
+      end
+
+      def average_text(average_duration)
+        "avg(#{average_duration.round(1)}ms)"
       end
 
       def analyse_single_class(metrics)
