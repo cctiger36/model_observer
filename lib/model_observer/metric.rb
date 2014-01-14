@@ -4,7 +4,7 @@ module ModelObserver
 
     def initialize(model, started_at, ended_at)
       @model_class = model.class
-      @model_id = model.__send__(model.class.primary_key)
+      @model_id = model.__send__(model.class.primary_key) if model.class.primary_key
       @started_at = started_at
       @ended_at = ended_at
     end
