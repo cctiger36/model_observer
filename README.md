@@ -16,18 +16,18 @@ and bundle
 
     bundle
 
-## Query Log
+## Configuration
 
-The duration include instantiate models will be logged after each sql log like this:
+Initialize ModelObserver at `config/environments/development.rb` with the following code:
 
-    Author Load (0.5ms)  SELECT `authors`.* FROM `authors` WHERE `authors`.`id` = 1 LIMIT 1
-    Author Instantiate (1.5ms)  SELECT `authors`.* FROM `authors` WHERE `authors`.`id` = 1 LIMIT 1
-
-1.5ms == 0.5ms(DB query) + 1.0ms(model instantiation)
+    config.after_initialize do
+      ModelObserver.summary = true
+      ModelObserver.instantiation_log = true
+    end
 
 ## Summary Log
 
-The summary of each request will be added to the end like this:
+The summary of each request will be appended to the end like this:
 
     ===== Model Observer Start =====
     Author: 1 sum(10.6ms) avg(10.6ms)
@@ -44,3 +44,12 @@ The summary of each request will be added to the end like this:
     ===== Model Observer End =======
 
 `id(319): 3` means the models with same class(Book) and same id(319) have been instantiated three times.
+
+## Instantiate Log
+
+The duration include query and instantiate models will be logged after each sql log like this:
+
+    Author Load (0.5ms)  SELECT `authors`.* FROM `authors` WHERE `authors`.`id` = 1 LIMIT 1
+    Author Instantiate (1.5ms)  SELECT `authors`.* FROM `authors` WHERE `authors`.`id` = 1 LIMIT 1
+
+1.5ms == 0.5ms(DB query) + 1.0ms(model instantiation)
