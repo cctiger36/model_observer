@@ -6,6 +6,9 @@ require 'model_observer'
 require 'coveralls'
 Coveralls.wear!
 
+ModelObserver.summary = true
+ModelObserver.instantiation_log = true
+
 extend ModelObserver::Dependency
 
 MODELS = File.join(File.dirname(__FILE__), "models")
