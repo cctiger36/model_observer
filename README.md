@@ -45,7 +45,7 @@ The summary of each request will be appended to the end like this:
 
 `id(319): 3` means the models with same class(Book) and same id(319) have been instantiated three times.
 
-## Instantiate Log
+## instantiation Log
 
 The duration include query and instantiate models will be logged after each sql log like this:
 
